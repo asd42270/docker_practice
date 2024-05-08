@@ -23,3 +23,11 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+tasks.register('copyPrivate', Copy) {
+    copy {
+        from './submodule-data'
+        include "*.properties"
+        into 'src/main/resources'
+    }
+}
